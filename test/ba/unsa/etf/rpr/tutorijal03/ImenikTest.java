@@ -60,4 +60,5 @@ class ImenikTest {
         }
         assertEquals("033/123-156,033/123-456,033/123-656,", result);
     }
+
 }
