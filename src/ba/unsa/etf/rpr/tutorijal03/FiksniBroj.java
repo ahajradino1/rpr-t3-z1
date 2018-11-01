@@ -12,7 +12,7 @@ public class FiksniBroj extends TelefonskiBroj {
         public String getPozivni() {
             return pozivni;
         }
-        public static Grad izPozivnog(String s) {
+        public static Grad izPozivnog (String s) throws IllegalArgumentException {
             switch (s){
                 case "033": return SARAJEVO;
                 case "035": return TUZLA;
@@ -24,7 +24,8 @@ public class FiksniBroj extends TelefonskiBroj {
                 case "036": return MOSTAR;
                 case "037": return BIHAC;
                 case "038": return GORAZDE;
-                default: return SIROKIBRIJEG;
+                case "039": return SIROKIBRIJEG;
+                default: throw new IllegalArgumentException("Pogresan pozivni broj");
             }
         }
     }
