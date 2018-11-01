@@ -29,14 +29,14 @@ public class Imenik {
     Set<String> izGrada(FiksniBroj.Grad g) {
         SortedSet<String> stanovniciGrada = new TreeSet();
         for(HashMap.Entry<String, TelefonskiBroj> entry : imenik.entrySet())
-            if(entry.getValue().dajBroj().substring(0, 3).equals(g.dajPozivni())) stanovniciGrada.add(entry.getKey());
+            if(entry.getValue().dajBroj().substring(0, 3).equals(g.getPozivni())) stanovniciGrada.add(entry.getKey());
         return stanovniciGrada;
     }
     Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
         Comparator<TelefonskiBroj> comparator = (TelefonskiBroj  broj1, TelefonskiBroj  broj2) -> (broj1.ispisi().compareTo(broj2.ispisi()));
         SortedSet<TelefonskiBroj> brojevi = new TreeSet(comparator);
         for(HashMap.Entry<String, TelefonskiBroj> entry : imenik.entrySet())
-            if(entry.getValue().dajBroj().substring(0, 3).equals(g.dajPozivni())) brojevi.add(entry.getValue());
+            if(entry.getValue().dajBroj().substring(0, 3).equals(g.getPozivni())) brojevi.add(entry.getValue());
         return brojevi;
     }
 }
