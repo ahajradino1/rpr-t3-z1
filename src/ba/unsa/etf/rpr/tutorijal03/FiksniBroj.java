@@ -1,14 +1,31 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
+import java.util.concurrent.TransferQueue;
+
 public class FiksniBroj extends TelefonskiBroj {
     public enum Grad {
         SARAJEVO("033"), TUZLA("035"), ZENICA("032"), BRCKO("049"), TRAVNIK("030"), ORASJE("031"), LIVNO("034"), MOSTAR("036"), BIHAC("037"), GORAZDE("038"), SIROKIBRIJEG("039");
-        private final String pozivni;
+        private String pozivni;
         Grad(String pozivni) {
             this.pozivni = pozivni;
         }
         public String getPozivni() {
             return pozivni;
+        }
+        public static Grad izPozivnog(String s) {
+            switch (s){
+                case "033": return SARAJEVO;
+                case "035": return TUZLA;
+                case "032": return ZENICA;
+                case "049": return BRCKO;
+                case "030": return TRAVNIK;
+                case "031": return ORASJE;
+                case "034": return LIVNO;
+                case "036": return MOSTAR;
+                case "037": return BIHAC;
+                case "038": return GORAZDE;
+                default: return SIROKIBRIJEG;
+            }
         }
     }
     private Grad grad;
