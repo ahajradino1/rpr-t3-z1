@@ -16,9 +16,6 @@ public class Program {
       //  FiksniBroj.Grad grad =  FiksniBroj.Grad.valueOf(pozivniBroj);
         return new FiksniBroj(FiksniBroj.Grad.izPozivnog(pozivniBroj), broj);
     }
-    public static void ispisFiksnogBroja() {
-        System.out.println(unosFiksnogBroja().ispisi());
-    }
     public static MobilniBroj unosMobilnogBroja() {
         System.out.println("Unesite mobilni broj u obliku 'xxx-xxx'");
         Scanner sc = new Scanner(System.in);
@@ -27,9 +24,6 @@ public class Program {
         int mreza = sc.nextInt();
         return new MobilniBroj(mreza, broj);
     }
-    public static void ispisMobilnogBroja() {
-        System.out.println(unosMobilnogBroja().ispisi());
-    }
     public static MedunarodniBroj unosMedunarodnogBroja() {
         System.out.println("Unesite medjunarodni broj u obliku 'xx xx-xx-xx'");
         Scanner sc = new Scanner(System.in);
@@ -37,9 +31,6 @@ public class Program {
         System.out.println("Unesite pozivni broj za drzavu: ");
         String drzava = sc.nextLine();
         return new MedunarodniBroj(drzava, broj);
-    }
-    public static void ispisMedunarodnogBroja() {
-        System.out.println(unosMedunarodnogBroja().ispisi());
     }
     public static void dodavanjeBrojaUImenik() {
         System.out.println("Unesite ime korisnika: ");
@@ -130,11 +121,11 @@ public class Program {
             opcija = sc.nextInt();
             if(opcija == 0) break;
             if(opcija == 1) unosFiksnogBroja();
-            else if(opcija == 2) ispisFiksnogBroja();
+            else if(opcija == 2) System.out.println(unosFiksnogBroja().ispisi());
             else if(opcija == 3) unosMobilnogBroja();
-            else if(opcija == 4) ispisMobilnogBroja();
+            else if(opcija == 4) System.out.println(unosMobilnogBroja().ispisi());
             else if(opcija == 5) unosMedunarodnogBroja();
-            else if(opcija == 6) ispisMedunarodnogBroja();
+            else if(opcija == 6) System.out.println(unosMedunarodnogBroja().ispisi());
             else if(opcija == 7) dodavanjeBrojaUImenik();
             else if(opcija == 8) ispisiSaTelefonskimBrojem();
             else if(opcija == 9) ispisiSaPocetnimSlovom();
