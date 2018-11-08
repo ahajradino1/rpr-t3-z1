@@ -1,12 +1,12 @@
 package ba.unsa.etf.rpr.tutorijal03;
+
 import java.util.Scanner;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.SARAJEVO;
 
 public class Program {
+    private Program(){}
     public static FiksniBroj unosFiksnogBroja() {
         System.out.println("Unesite fiksni broj u obliku 'xxx-xxx': ");
         Scanner sc = new Scanner(System.in);
@@ -45,7 +45,7 @@ public class Program {
     public static void ispisiSaTelefonskimBrojem() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Ajsa Hajradinovic", new FiksniBroj(SARAJEVO, "123-456"));
-        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "456-123"));
+        imenik.dodaj("Sara Sara", new FiksniBroj(SARAJEVO, "456-123"));
         System.out.println("Unesite 1 za unos fiksnog broja, 2 za unos mobilnog broja, 3 za unos medjunarodnog broja: ");
         Scanner sc = new Scanner(System.in);
         int opcija = sc.nextInt();
@@ -72,11 +72,11 @@ public class Program {
     }
     public static void ispisiKorisnikeIzGrada() {
         Imenik imenik = new Imenik();
-        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
-        imenik.dodaj("Pero Peric", new FiksniBroj(SARAJEVO, "123-656"));
-        imenik.dodaj("Ivo Ivic", new MobilniBroj(61, "321-645"));
-        imenik.dodaj("Jozo Jozic", new MobilniBroj(64, "987-654"));
-        imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
+        imenik.dodaj("Mujo Mujic", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Pero Smith", new FiksniBroj(SARAJEVO, "123-656"));
+        imenik.dodaj("Jozo Ivic", new MobilniBroj(61, "321-645"));
+        imenik.dodaj("John Jozic", new MobilniBroj(64, "987-654"));
+        imenik.dodaj("Ivo Smith", new MedunarodniBroj("+1", "23 45-67-89"));
         System.out.println("Unesite ime grada: ");
         Scanner sc = new Scanner(System.in);
         String imeGrada = sc.next().toUpperCase();
@@ -89,9 +89,9 @@ public class Program {
     }
     public static void ispisiBrojeveIzGrada() {
         Imenik imenik = new Imenik();
-        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
-        imenik.dodaj("Pero Peric", new FiksniBroj(SARAJEVO, "123-656"));
-        imenik.dodaj("Ivo Ivic", new MobilniBroj(61, "321-645"));
+        imenik.dodaj("Ivo Sarac", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Sara Peric", new FiksniBroj(SARAJEVO, "123-656"));
+        imenik.dodaj("Pero Ivic", new MobilniBroj(61, "321-645"));
         System.out.println("Unesite ime grada: ");
         Scanner sc = new Scanner(System.in);
         String imeGrada = sc.next().toUpperCase();
@@ -132,6 +132,5 @@ public class Program {
             else if(opcija == 10) ispisiKorisnikeIzGrada();
             else ispisiBrojeveIzGrada();
         } while(opcija != 0);
-
     }
 }
